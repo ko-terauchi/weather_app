@@ -23,7 +23,8 @@ return [
 
     'openweathermap' => [
         'key' => env('OPEN_WHATHER_MAP_API_KEY'),
-        'url' => env('OPEN_WHATHER_MAP_URL'),
+        'urlF' => env('OPEN_WHATHER_MAP_URL_F'),
+        'urlW' => env('OPEN_WHATHER_MAP_URL_W'),
     ],
 
     'postmark' => [

@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
-    public function index()
-    {
-        return "Hello world";
+    public function index() {
+        $prefs = config('pref');
+        return view('search')->with(['prefs' => $prefs]);
     }
 }
