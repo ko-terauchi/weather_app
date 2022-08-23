@@ -15,6 +15,6 @@ use App\Http\Controllers\WeatherAPIController;
 |
 */
 
-Route::get('/search', [SearchController::class,'index'])->name('search.index');
+Route::get('/search', [SearchController::class,'prefPullDown'])->name('search.index');
 Route::get('/weatherData', [WeatherAPIController::class,'weatherData'])->name('weatherAPI.weatherdata');
 Route::post('/weatherData', [WeatherAPIController::class,'weatherData'])->name('weatherAPI.weatherdata');
