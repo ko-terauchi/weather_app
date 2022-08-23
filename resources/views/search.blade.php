@@ -28,7 +28,7 @@
             <option value="{{ $pref_id }}">{{ $name }}</option>
             @endforeach
         </select>
-        <form method="post" action="{{ route('weatherAPI.weatherdata')}}" class="inline">
+        <form ethod="post" action="{{ route('weatherAPI.weatherdata')}}" class="inline">
             @csrf
             <input type="submit" value="検索">
         </form>
