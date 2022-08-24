@@ -1,9 +1,9 @@
 <?php
 
-$city = "Tokyo";
+$pref = "Tokyo";
 $API_KEY = config('services.openweathermap.key');
 $base_url_F = config('services.openweathermap.urlF');
-$urlF = "$base_url_F?units=metric&q=$city&APPID=$API_KEY";
+$urlF = "$base_url_F?units=metric&q=$pref&APPID=$API_KEY";
 
 $forecast = json_decode(file_get_contents($urlF), true);
 
@@ -23,7 +23,7 @@ function convert($main){
 		}
 }
 
-echo "<b>" . $city . "</b><br>";
+echo "<b>" . $pref . "</b><br>";
 $list = $forecast["list"];
 
 echo "<table class=\"table1\">";
