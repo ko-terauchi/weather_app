@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('prefectures', function (Blueprint $table) {
-            $table->string('pref_name',10);
             $table->integer('pref_id');
-            $table->timestamps('created_at');
+            $table->string('pref_name',10);
+            $table->timestamp('created_at');
         });
     }
 
@@ -28,9 +28,9 @@ return new class extends Migration
     public function down()
     {
         Schema::create('prefectures', function (Blueprint $table) {
+            $table->integer('pref_id');
             $table->string('pref_name',10);
-            $table->int('pref_id');
-            $table->timestamps('created_at');
+            $table->timestamp('created_at');
         });
     }
 };
