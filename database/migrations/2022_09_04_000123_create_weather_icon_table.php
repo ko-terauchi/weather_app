@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('prefectures', function (Blueprint $table) {
-            $table->id('pref_id');
+        Schema::create('weather_icons', function (Blueprint $table) {
+            $table->id('icon_id');
             $table->string('name');
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('prefectures');
+        Schema::dropIfExists('weather_icons');
     }
 };

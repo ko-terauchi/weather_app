@@ -14,16 +14,18 @@ return new class extends Migration
     public function up()
     {
         Schema::create('weather_data', function (Blueprint $table) {
-            $table->string('pref_name',10);
-            $table->dateTime('date_time');
-            $table->string('icon',255);
-            $table->string('name',10);
-            $table->float('temp_max');
-            $table->float('temp_min');
-            $table->float('pop');
-            $table->integer('pressure');
-            $table->integer('humidity');
-            $table->float('wind_speed');
+            $table->bigIncrements('id');
+            $table->integer('data_id');
+            $table->integer('pref_id');
+            $table->integer('icon_id');
+            $table->string('name');
+            $table->string('temp_max');
+            $table->string('temp_min');
+            $table->string('pressure');
+            $table->string('humidity');
+            $table->string('pop');
+            $table->string('wind_spped');
+            $table->timestamps();
         });
     }
 
@@ -34,17 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::create('weather_data', function (Blueprint $table) {
-            $table->string('pref_name');
-            $table->dateTime('date_time');
-            $table->string('icon');
-            $table->string('name');
-            $table->float('temp_max');
-            $table->float('temp_min');
-            $table->float('pop');
-            $table->integer('pressure');
-            $table->integer('humidity');
-            $table->float('wind_speed');
-        });
+        Schema::dropIfExists('weather_data');
     }
 };
